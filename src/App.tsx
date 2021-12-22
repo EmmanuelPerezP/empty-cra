@@ -1,7 +1,7 @@
 import './App.css';
 import NavigationRouter from './routes/NavigationRouter';
 
-const App = function () {
+const App = () => {
   return (
     <div className="App">
       <NavigationRouter />

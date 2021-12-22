@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { ReactElement } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from '../views/Home';
@@ -18,8 +17,8 @@ import Home from '../views/Home';
 const Component = (): ReactElement => {
   return (
     <BrowserRouter>
-      <Routes >
-        <Route path={'/'} element={<Home></Home>} />
+      <Routes>
+        <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

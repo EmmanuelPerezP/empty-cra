@@ -12,6 +12,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'airbnb',
+    'prettier',
+    'plugin:prettier/recommended',
   ],
   ignorePatterns: ['.eslintrc.js', 'craco.config.js'],
   overrides: [
@@ -33,8 +35,18 @@ module.exports = {
     project: ['./tsconfig.json'],
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'prettier', 'module-resolver', 'import'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'prettier',
+    'module-resolver',
+    'import',
+  ],
   rules: {
+    "react/function-component-definition": [2, {
+      "namedComponents": "arrow-function",
+      "unnamedComponents":  "arrow-function",
+    }],
     'import/no-unresolved': 'error',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': ['warn', { extensions: ['.tsx', '.ts'] }],
@@ -57,9 +69,14 @@ module.exports = {
       },
     ],
 
-    'react/destructuring-assignment': [2, 'always', { ignoreClassFields: true }],
+    'react/destructuring-assignment': [
+      2,
+      'always',
+      { ignoreClassFields: true },
+    ],
     'prettier/prettier': ['error'],
     'object-curly-newline': 'off',
+    'max-lines': ['error', { max: 150, skipComments: true }],
     'prettier/prettier': [
       'error',
       {

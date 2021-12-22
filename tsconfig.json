@@ -23,6 +23,9 @@
     "sourceRoot": "src",
     "typeRoots": [
       "node_modules/@types",
+      "node_modules/**/*.d.ts",
+      "node_modules/**/**/*.d.ts",
+      "node_modules/**/**/**/*.d.ts",
       "src/types,src/types/**/*.ts",
       "src/types/**/*.d.ts",
       "src/types/**/**/*.ts"
