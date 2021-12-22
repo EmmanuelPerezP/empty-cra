@@ -1,0 +1,17 @@
+@import '@scss/shared/theme_variables';
+@import '@scss/shared/variables';
+@import '@scss/shared/mixins';
+
+.component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include respond(mobile) {
+    padding-left: 0.6875rem;
+    padding-right: 0.6875rem;
+    min-width: 90vw;
+    max-width: 95vw;
+    min-height: 80%;
+  }
+}

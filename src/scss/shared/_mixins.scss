@@ -1,0 +1,96 @@
+/*
+
+respond($size)
+
+$size = mobile | tablet-sm | tablet-lg | desktop | big-desktop
+
+mobile: 0px - 599px
+
+tablet: 600px - 899px
+
+tablet-lg: 900px - 1199px
+
+desktop: 1200px - 1799px
+
+desktop-lg: 1800px +
+
+*/
+
+$sizes: (
+  'mobile-max-width': 37.4375rem,
+  'tablet-min-width': 37.5rem,
+  'tablet-max-width': 56.1875rem,
+  'tablet-lg-min-width': 56.25rem,
+  'tablet-lg-max-width': 74.9375rem,
+  'desktop-min-width': 75rem,
+  'desktop-max-width': 112.4375rem,
+  'desktop-lg-min-width': 112.5rem,
+);
+
+/* TODO: refactor this mixin */
+@mixin respond($size) {
+  @if $size == mobile {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media (min-width: 600px) and (max-width: 899px) {
+      @content;
+    }
+  } @else if $size == tablet-lg {
+    @media (min-width: 900px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $size == desktop {
+    @media (min-width: 1200px) and (max-width: 1799px) {
+      @content;
+    }
+  } @else if $size == desktop-lg {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+@mixin minRespond($size) {
+  @if $size == 'mobile-max-width' {
+    @media (max-width: map-get($sizes, $size)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: map-get($sizes, $size)) {
+      @content;
+    }
+  }
+}
+
+// flex
+@mixin flex($direction, $justifyContent, $alignItems) {
+  display: flex;
+
+  @if $justifyContent {
+    justify-content: $justifyContent;
+  }
+  @if $alignItems {
+    align-items: $alignItems;
+  }
+  @if $direction {
+    flex-direction: $direction;
+  }
+}
+
+@mixin hideOnMobileMixin {
+  &.hide-on-mobile {
+    @include respond(mobile) {
+      display: none;
+    }
+  }
+}
+
+@mixin info-after() {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 4px solid transparent;
+}

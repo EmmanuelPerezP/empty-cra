@@ -1,0 +1,26 @@
+# don't ever lint node_modules
+node_modules
+# don't lint build output (make sure it's set to your correct build folder name)
+build
+dist
+# don't lint nyc coverage output
+coverage
+#Ignore non typescript,jsx,tsx files
+*.css
+*.svg
+*.png
+*.jpeg
+*.jpg
+package.json
+package-lock.json
+src/lib/apollo
+*.gql
+codegen.yml
+tsconfig.json
+tsconfig.paths.json
+public
+src/scss
+src/assets
+src/lang/locales
+README.md
+netlify.toml

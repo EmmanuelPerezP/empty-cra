@@ -1,26 +1,43 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
-    "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
+    "noImplicitAny": false,
+    "inlineSourceMap": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "sourceRoot": "src",
+    "typeRoots": [
+      "node_modules/@types",
+      "src/types,src/types/**/*.ts",
+      "src/types/**/*.d.ts",
+      "src/types/**/**/*.ts"
+    ],
+    "skipLibCheck": true
   },
+  "extends": "./tsconfig.paths.json",
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+    "__tests__/**/*-test.ts"
   ]
 }

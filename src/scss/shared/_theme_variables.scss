@@ -1,0 +1,38 @@
+/* Avify Classic Theme
+1. Colors
+   1.0 Palette
+   1.1 Main colors
+   1.2 Action colors
+   1.3 Backdrops colors
+2. Text Colors
+3. IU
+   3.0 Button
+   ...
+4. Others
+   4.1 Shadows
+   4.2 Logos
+*/
+
+/* 1 Colors */
+/* 1.0 Palette */
+$main-purple: #a7358a;
+$hover-purple: #4b2565;
+$main-pink: #e9416a;
+$hover-pink: #ce365b;
+$peach: #ec6669;
+$error-red: #ff4242;
+$success: #6bdb98;
+$warning: #ffc672;
+$white: #ffffff;
+$light-mode: #f9f8f8;
+$dark-mode: #301f49;
+$inactive: #c9d6df;
+$input-border: #dddddd;
+$gray: #626262;
+$black: #000000;
+$info-blue: #20b2c6;
+
+/* 1.1 Main colors */
+$primary: $main-purple;
+$secundary: $main-pink;
+$page-background: $white;
